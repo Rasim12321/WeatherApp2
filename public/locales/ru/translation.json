@@ -1,0 +1,25 @@
+{
+    "weather": "ПОГОДА",
+    "lang": {
+        "en": "АНГЛ",
+        "ru": "РУС",
+        "ua": "УКР"
+    },
+    "search": {
+        "placeholder": "Выберите город"
+    },
+    "card" : {
+        "details": "Описание",
+        "feelsLike": "Ощущается",
+        "wind": "Ветер",
+        "humidity": "Влажность",
+        "pressure": "Давление",
+        "speed": "м/с",
+        "speedI": "м/ч",
+        "press": "Пa"
+    },
+    "hourlyForecast": "Почасовой прогноз",
+    "dailyForecast": "Ежедневный прогноз"
+
+
+}

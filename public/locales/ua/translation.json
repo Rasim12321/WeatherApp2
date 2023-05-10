@@ -1,0 +1,25 @@
+{
+    "weather": "ПОГОДА",
+    "lang": {
+        "en": "АНГЛ",
+        "ru": "РОС",
+        "ua": "УКР"
+    },
+    "search": {
+        "placeholder": "Виберіть місто"
+    },
+    "card" : {
+        "details": "Опис",
+        "feelsLike": "Відчувається",
+        "wind": "Вiтер",
+        "humidity": "Вологiсть",
+        "pressure": "Тиск",
+        "speed": "м/с",
+        "speedI": "м/г",
+        "press": "Пa"
+    },
+    "hourlyForecast": "Погодинний прогноз",
+    "dailyForecast": "Щоденний прогноз"
+
+
+}

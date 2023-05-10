@@ -1,0 +1,23 @@
+{
+    "weather": "WEATHER",
+    "lang": {
+        "en": "ENG",
+        "ru": "RUS",
+        "ua": "UKR"
+    },
+    "search": {
+        "placeholder": "Search for cities"
+    },
+    "card" : {
+        "details": "Details",
+        "feelsLike": "Feels Like",
+        "wind": "Wind",
+        "humidity": "Humidity",
+        "pressure": "Pressure",
+        "speed": "m/s",
+        "speedI": "m/h",
+        "press": "Pa"
+    },
+    "hourlyForecast": "Hourly forecast",
+    "dailyForecast": "Daily forecast"
+}
