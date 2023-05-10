@@ -29,6 +29,7 @@
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
     "react-select-async-paginate": "^0.7.2",
+    "reactjs-toastr": "^1.1.0",
     "recharts": "^2.6.1",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",

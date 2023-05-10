@@ -26,10 +26,6 @@ const dailyForecastReducer = createSlice({
       const updatedForecasts = state.dailyForecast.filter(
         (dailyForecastItem: any) => dailyForecastItem.id !== action.payload
       );
-      // return {
-      //   ...state,
-      //   dailyForecast: updatedForecasts,
-      // };
       state.dailyForecast = updatedForecasts;
     },
     setUnit(state, action: PayloadAction<Unit>) {
@@ -43,9 +39,6 @@ const dailyForecastReducer = createSlice({
           return dailyForecastItem;
         }
       });
-      console.log(updatedForecasts);
-
-      // state.dailyForecast = updatedForecasts
     },
     setLoading(state, action: PayloadAction<boolean>) {
       state.isloading = action.payload;

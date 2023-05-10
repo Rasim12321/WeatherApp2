@@ -2,10 +2,9 @@ import createSagaMiddleWare from "redux-saga";
 import { rootReducer } from "./reducers";
 import { rootWatcher } from "./sagas";
 import axios from "axios";
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 const saga = createSagaMiddleWare();
-// const composeEnhancers = composeWithDevTools(applyMiddleware(sagaMiddleware));
 
 const store = configureStore({
   reducer: rootReducer,

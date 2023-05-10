@@ -1,10 +1,4 @@
-import {
-  takeLatest,
-  put,
-  select,
-  CallEffect,
-  PutEffect,
-} from "redux-saga/effects";
+import { takeLatest, put, PutEffect } from "redux-saga/effects";
 import axios, { AxiosResponse } from "axios";
 import * as toastr from "toastr";
 import { GET_DAILY_FORECAST } from "../actions/actionTypes";
@@ -46,9 +40,6 @@ function* dailyForecastWorker({
 > {
   try {
     yield put(setLoading(true));
-
-    // const { unit } = yield select((state) => state.unit);
-
     const { data } = yield axios.get("/forecast", {
       params: {
         lat: payload.lat,
