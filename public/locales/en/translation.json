@@ -1,4 +1,5 @@
 {
+    "inputError": "Enter full city name",
     "weather": "WEATHER",
     "lang": {
         "en": "ENG",

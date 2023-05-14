@@ -6,8 +6,6 @@ const defaultSettings: PositionOptions = {
   maximumAge: 0,
 };
 
-type Geolocation = typeof GeolocationCoordinates;
-
 export const usePosition = (
   watch = false,
   settings = defaultSettings
