@@ -10,7 +10,6 @@ function App() {
   const [searchCityCoords, setSearchCityCoords] = useState<Coordinates | null>(
     null
   );
-
   const { getDailyForecast } = UseActions();
 
   const { position } = usePosition();

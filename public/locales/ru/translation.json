@@ -10,6 +10,34 @@
         "placeholder": "Выберите город"
     },
     "card" : {
+        "weather" : {
+            "Clouds" : "Облачно",
+            "Rain" : "Дождь",
+            "Clear" : "Ясно"
+        },
+        "days" : {
+            "Sun" : "Вс",
+            "Mon" : "Пн",
+            "Tue" : "Вт",
+            "Wed" : "Ср",
+            "Thu": "Чт",
+            "Fri" : "Пт",
+            "Sut" : "Сб"
+        },
+        "months": {
+            "January" : "Января",
+            "February" : "Февраля",
+            "March" : "Марта",
+            "April" : "Апреля",
+            "May" : "Мая",
+            "June" : "Июня",
+            "July" :  "Июля",
+            "August" : "Августа",
+            "September" : "Сентября",
+            "October" : "Октября",
+            "November" : "Ноября",
+            "December" : "Декабря"
+        },
         "details": "Описание",
         "feelsLike": "Ощущается",
         "wind": "Ветер",

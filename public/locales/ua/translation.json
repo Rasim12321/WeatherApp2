@@ -9,7 +9,36 @@
     "search": {
         "placeholder": "Виберіть місто"
     },
+
     "card" : {
+        "weather" : {
+            "Clouds" : "Хмарно",
+            "Rain" : "Дощ",
+            "Clear" : "Ясно"
+        },
+        "days" : {
+            "Sun" : "Вс",
+            "Mon" : "Пн",
+            "Tue" : "Вт",
+            "Wed" : "Ср",
+            "Thu": "Чт",
+            "Fri" : "Пт",
+            "Sut" : "Сб"
+        },
+        "months": {
+            "January" : "Січня",
+            "February" : "Лютого",
+            "March" : "Березня",
+            "April" : "Квітня",
+            "May" : "Травня",
+            "June" : "Червня",
+            "July" :  "Липня",
+            "August" : "Серпня",
+            "September" : "Вересня",
+            "October" : "Жовтня",
+            "November" : "Листопада",
+            "December" : "Грудня"
+        },
         "details": "Опис",
         "feelsLike": "Відчувається",
         "wind": "Вiтер",

@@ -6,19 +6,36 @@ import { UseActions } from "../../hooks/useActions";
 import Loading from "../Loading";
 import Chart from "./Chart";
 import { CityForecast } from "../../store/types";
+import { useEffect, useState } from "react";
 
 const WeatherCard = () => {
   const { t } = useTranslation();
+  const [days, setDays] = useState<[] | string[]>([]);
+  const [time, setTime] = useState(new Date());
   const { dailyForecast, isloading } = useTypedSelector(
     (state) => state.dailyForecastData
   );
 
   const { removeDailyForecast, setUnit } = UseActions();
 
-  let time = new Date();
-  const timeData = `${time.toDateString().slice(0, 3)}, ${time.getDay()} ${time
-    .toDateString()
-    .slice(4, 7)}, ${time.getHours()}:${time.getMinutes()}`;
+  useEffect(() => {
+    setTime(new Date());
+    const toDay = time.toDateString().slice(0, 3);
+    const daysArr = [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sut",
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+    ];
+    setDays(daysArr.slice(daysArr.indexOf(toDay), daysArr.indexOf(toDay) + 5));
+  }, [time.getDate()]);
 
   if (isloading) {
     return <Loading />;
@@ -26,35 +43,35 @@ const WeatherCard = () => {
   return dailyForecast.map((forecast: CityForecast) => {
     const prop = [
       {
-        day: "Thu",
+        day: t(`card.days.${days[0]}`),
         temp:
           forecast.unit === "metric"
             ? forecast.currentWeather.temp
             : Math.round((forecast.currentWeather.temp * 9) / 5 + 32),
       },
       {
-        day: "Fri",
+        day: t(`card.days.${days[1]}`),
         temp:
           forecast.unit === "metric"
             ? forecast.list[15]
             : Math.round((forecast.list[15] * 9) / 5 + 32),
       },
       {
-        day: "Sat",
+        day: t(`card.days.${days[2]}`),
         temp:
           forecast.unit === "metric"
             ? forecast.list[23]
             : Math.round((forecast.list[23] * 9) / 5 + 32),
       },
       {
-        day: "Sun",
+        day: t(`card.days.${days[3]}`),
         temp:
           forecast.unit === "metric"
             ? forecast.list[23]
             : Math.round((forecast.list[23] * 9) / 5 + 32),
       },
       {
-        day: "Mon",
+        day: t(`card.days.${days[4]}`),
         temp:
           forecast.unit === "metric"
             ? forecast.list[23]
@@ -66,7 +83,12 @@ const WeatherCard = () => {
         <div className={styles.first}>
           <div className={styles.city}>
             {forecast.city.name}, {forecast.city.country}
-            <div className={styles.date}>{timeData}</div>
+            <div className={styles.date}>
+              {t(`card.days.${time.toDateString().slice(0, 3)}`)},
+              {` ${time.getDate()} `}
+              {t(`card.months.${time.toDateString().slice(4, 7)}`)},
+              {` ${time.getHours()}`}:{` ${time.getMinutes()}`}
+            </div>
           </div>
 
           <div className="d-flex">
@@ -75,7 +97,7 @@ const WeatherCard = () => {
                 src={`https://openweathermap.org/img/wn/${forecast.currentWeather.icon}.png`}
                 alt=""
               />
-              {forecast.currentWeather.main}
+              {t(`card.weather.${forecast.currentWeather.main}`)}
             </div>
             <div
               className={styles.button}
@@ -121,7 +143,12 @@ const WeatherCard = () => {
             </div>
 
             <div className={styles.feels}>
-              {t("card.feelsLike")} {forecast.currentWeather.feels_like}°C
+              {t("card.feelsLike")}{" "}
+              {forecast.unit === "metric"
+                ? forecast.currentWeather.feels_like + "°C"
+                : Math.round(
+                    (forecast.currentWeather.feels_like * 9) / 5 + 32
+                  ) + "°F "}
             </div>
           </div>
           <div className="mr-0">
