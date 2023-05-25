@@ -5,7 +5,8 @@ import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 import { UseActions } from "./hooks/useActions";
 import { Coordinates } from "./store/types";
-import { usePosition } from "./hooks/UsePosition";
+import { usePosition } from "./hooks/usePosition";
+
 function App() {
   const [searchCityCoords, setSearchCityCoords] = useState<Coordinates | null>(
     null

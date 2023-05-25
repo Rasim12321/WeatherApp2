@@ -41,7 +41,6 @@ const SearchAutocomplete = ({ onSearchChange }: Props) => {
         const { data }: { data: CityData } = await axios.get("/find", {
           params: { q: inputValue },
         });
-
         return {
           options: data.list.map((city) => {
             return {
@@ -61,7 +60,7 @@ const SearchAutocomplete = ({ onSearchChange }: Props) => {
     <AsyncPaginate
       className={styles.autoSearch}
       placeholder={data || t("search.placeholder")}
-      debounceTimeout={600}
+      debounceTimeout={800}
       value={city}
       onChange={onSearchHandler}
       loadOptions={getCityOptions}

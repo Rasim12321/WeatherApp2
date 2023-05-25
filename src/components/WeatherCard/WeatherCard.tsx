@@ -7,6 +7,7 @@ import Loading from "../Loading";
 import Chart from "./Chart";
 import { CityForecast } from "../../store/types";
 import { useEffect, useState } from "react";
+import React from "react";
 
 const WeatherCard = () => {
   const { t } = useTranslation();

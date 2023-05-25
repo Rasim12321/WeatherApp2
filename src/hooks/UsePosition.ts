@@ -41,5 +41,6 @@ export const usePosition = (
     };
   }, [settings]);
   // @ts-ignore
+
   return { position: currentPosition, error };
 };

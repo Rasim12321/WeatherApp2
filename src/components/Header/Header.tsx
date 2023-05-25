@@ -5,11 +5,14 @@ import styles from "./Header.module.css";
 function Header() {
   const { i18n, t } = useTranslation();
   const [opacity, setOpacity] = useState<boolean>(false);
-  const [language, setLanguage] = useState<string>("EN");
+  const [language, setLanguage] = useState<string | null>(
+    localStorage.getItem("language")
+  );
 
   const changeLanguage = useCallback(
-    (lang: "ru" | "en" | "ua") => {
-      i18n.changeLanguage(lang);
+    (lang: "RU" | "EN" | "UA") => {
+      localStorage.setItem("language", lang);
+      i18n.changeLanguage(lang.toLowerCase());
     },
     [i18n]
   );
@@ -26,19 +29,19 @@ function Header() {
         <div>
           <img src={languageIcon} width="20px" height="20px" alt="" />
         </div>
-        <div className={styles.en}>{language}</div>
+        <div className={styles.en}>{language === null ? "EN" : language}</div>
         <div className="m-1 ">^</div>
       </div>
       {opacity === true ? (
         <div className={styles.burgerFlex}>
           <div className={styles.burger}>
-            <div id="en" onClick={changeHandler}>
+            <div id="EN" onClick={changeHandler}>
               EN
             </div>
-            <div id="ua" onClick={changeHandler}>
+            <div id="UA" onClick={changeHandler}>
               UA
             </div>
-            <div id="ru" onClick={changeHandler}>
+            <div id="RU" onClick={changeHandler}>
               RU
             </div>
           </div>
